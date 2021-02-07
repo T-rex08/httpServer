@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 		HTMLHandler handler = new HTMLHandler();
 		Webpage[] pages={new Webpage("res/index.html", "/")};
-		Webimage[] images={new Webimage("res/sterrennacht.png", "/sterrennacht.png")};
+		Webimage[] images={new Webimage("res/pic.png", "/pic.png")};
 		Webpage error404=new Webpage("res/404.html", "/404.html");
 		handler.handle(pages,images,error404);
 	}
