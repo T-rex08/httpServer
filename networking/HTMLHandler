@@ -1,0 +1,17 @@
+package networking;
+
+import java.io.IOException;
+
+public class HTMLHandler {
+	ConnectionHandler handler;
+	public HTMLHandler() {
+		handler=new ConnectionHandler();
+	}
+	public void handle(Webpage[] pages,Webimage[] images,Webpage error404) {
+		try {
+			handler.run(pages,images,error404);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
