@@ -37,21 +37,17 @@ public class ConnectionHandler {
 	        }
 
 	        out.write("HTTP/1.0 200 OK\r\n");
-	        out.write("Content-Type: text/html\r\n");
-	        out.write("\r\n");
 	        boolean founded=false;
 	        for(Webpage data : pages) {
-	        	System.out.println(path);
 	        	if(data.path.equals(path)) {
+	        		out.write("Content-Type: text/html\r\n\r\n");
 	        		out.write(data.load());
 	        		founded=true;
 	        	}
 	        }
 	        for(Webimage data : images) {
-	        	System.out.println(data.path);
-	        	System.out.println(path);
 	        	if(data.path.equals(path)) {
-	        		System.out.println("worked");
+	        		out.write("Content-Type: image/png\r\n\r\n");
 	        		ImageIO.write(data.source, "png", clientSocket.getOutputStream());
 	        		founded=true;
 	        	}
